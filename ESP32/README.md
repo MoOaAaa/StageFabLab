@@ -19,3 +19,19 @@ Pour ces travaux, voici le layouts du module ESP32 et de la caméra ESP32 que j'
         src="https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2020/03/ESP32-CAM-pinout-new.png?quality=100&strip=all&ssl=1"
         alt="ESP32 CAM"
     />
+
+# Suivis de développement
+
+- [Travail sur les modules ESP32](#travail-sur-les-modules-esp32)
+- [Suivis de développement](#suivis-de-développement)
+- [1. Stream de la caméra](#1-stream-de-la-caméra)
+  - [1.1 Stream simple](#11-stream-simple)
+  
+# 1. Stream de la caméra
+## 1.1 Stream simple
+
+**Code disponible
+[ici](https://github.com/MoOaAaa/StageFabLab/tree/main/ESP32/ESP32-WebApp-Simple-Stream-Server).** <br/>
+Il s'agît d'un serveur simple en avec une caméra ESP qui n'affiche que le flux d'image de la caméra.
+Il est basé sur [ce code](https://registry.platformio.org/libraries/espressif/esp32-camera) (Dans la
+partie Readme, scroll jusqu'à l'exemple `JPEG HTTP Stream`).
