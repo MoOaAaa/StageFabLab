@@ -1,4 +1,11 @@
-# Travail sur les modules ESP32
+# Sommaire <!-- omit in toc -->
+
+- [1. Travail sur les modules ESP32](#1-travail-sur-les-modules-esp32)
+- [2. Suivis de développement](#2-suivis-de-développement)
+  - [2.1. Stream de la caméra](#21-stream-de-la-caméra)
+    - [2.1.1. Stream simple](#211-stream-simple)
+
+# 1. Travail sur les modules ESP32
 
 Un des projets aue mon tuteur voulait voir se réaliser était le stream des impressions 3D en ligne.
 Pour ce faire il avait acheté des caméras ESP32, ainsi que du matériel électronique pouvant aller
@@ -20,15 +27,11 @@ Pour ces travaux, voici le layouts du module ESP32 et de la caméra ESP32 que j'
         alt="ESP32 CAM"
     />
 
-# Suivis de développement
+# 2. Suivis de développement
 
-- [Travail sur les modules ESP32](#travail-sur-les-modules-esp32)
-- [Suivis de développement](#suivis-de-développement)
-- [1. Stream de la caméra](#1-stream-de-la-caméra)
-  - [1.1 Stream simple](#11-stream-simple)
   
-# 1. Stream de la caméra
-## 1.1 Stream simple
+## 2.1. Stream de la caméra
+### 2.1.1. Stream simple
 
 **Code disponible
 [ici](https://github.com/MoOaAaa/StageFabLab/tree/main/ESP32/ESP32-WebApp-Simple-Stream-Server).** <br/>
