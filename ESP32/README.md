@@ -47,4 +47,6 @@ partie Readme, scroll jusqu'à l'exemple `JPEG HTTP Stream`).
 
 ### 2.1.2 Toggle du stream
 
-**Code disponible ici
+**Code disponible
+[ici](https://github.com/MoOaAaa/StageFabLab/tree/main/ESP32/ESP32-WebApp-Stream-Toggle). Base
+reprise du [2.1.1](#211)
