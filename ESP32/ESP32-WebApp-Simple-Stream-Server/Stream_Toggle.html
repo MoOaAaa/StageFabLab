@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Stream Toggle</title>
+    </head>
+    <body>
+        <section style="display:block">
+            <div>
+                <button id="stream-toggle" onclick="toggleStream();">Start Stream</button>
+            </div>
+            <figure>
+                <div id="stream-container">
+                    <div id="close-stream" onclick="closeStream();">x</div>
+                    <img src="" id="stream">
+                </div>
+            </figure>
+        </section>
+        <script>
+            var streamUrl = "http://192.168.137.182/";
+
+            const hide = el => {
+                el.style.display = "none";
+            }
+            const show = el => {
+                el.style.display = "block";
+            }
+
+            const streamContainer = document.getElementById("stream-container");
+            const streamView = document.getElementById("stream");
+            const toggleButton = document.getElementById("stream-toggle");
+            const closeButton = document.getElementById("close-stream");
+
+            
+            const stopStream = () => {
+                window.stop();
+            toggleButton.innerHTML = 'Start Stream';
+            }
+        
+            const startStream = () => {
+            streamView.src = `${streamUrl}`;
+            show(streamContainer);
+            toggleButton.innerHTML = 'Stop Stream';
+            }
+
+            function closeStream() {
+                console.log("closed");
+                stopStream();
+                hide(streamContainer);
+            }
+
+            function toggleStream(){
+                console.log('toggle');
+                const isStreamUp = toggleButton.innerHTML === "Stop Stream";
+                if (isStreamUp) {
+                    stopStream();
+                }else {
+                    startStream();
+                }
+            }
+        </script>
+    </body>
+</html>
