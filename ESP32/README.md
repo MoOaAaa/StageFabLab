@@ -49,4 +49,7 @@ partie Readme, scroll jusqu'à l'exemple `JPEG HTTP Stream`).
 
 **Code disponible
 [ici](https://github.com/MoOaAaa/StageFabLab/tree/main/ESP32/ESP32-WebApp-Stream-Toggle). Base
-reprise du [2.1.1](#211)
+reprise du [2.1.1](#211)**
+Il s'agît d'un site simple, avec un bouton pour montrer le stream ou non avec un bouton.
+Pour le moment, le stream ne peut s'afficher uniquement si il n'y a qu'une seule instance du stream
+(celle du site uniquement)
