@@ -4,6 +4,7 @@
 - [2. Suivis de développement](#2-suivis-de-développement)
   - [2.1. Stream de la caméra](#21-stream-de-la-caméra)
     - [2.1.1. Stream simple](#211-stream-simple)
+    - [2.1.2 Toggle du stream](#212-toggle-du-stream)
 
 # 1. Travail sur les modules ESP32
 
@@ -43,3 +44,7 @@ montrant les différentes façon de connecter une caméra ESP32 à votre ordinat
 Il s'agît d'un serveur simple en avec une caméra ESP qui n'affiche que le flux d'image de la caméra.
 Il est basé sur [ce code](https://registry.platformio.org/libraries/espressif/esp32-camera) (Dans la
 partie Readme, scroll jusqu'à l'exemple `JPEG HTTP Stream`).
+
+### 2.1.2 Toggle du stream
+
+**Code disponible ici
