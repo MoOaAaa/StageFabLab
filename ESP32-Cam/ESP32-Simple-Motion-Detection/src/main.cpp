@@ -2,6 +2,7 @@
  * Camera capture example
  */
 
+#include "Arduino.h"
 #include "eloquent.h"
 
 // uncomment based on your camera and resolution

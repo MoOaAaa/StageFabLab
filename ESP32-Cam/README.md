@@ -7,7 +7,8 @@
     - [2.1.2. Toggle du stream](#212-toggle-du-stream)
 - [3. Motion Capture](#3-motion-capture)
   - [3.1. Motion Detection](#31-motion-detection)
-    - [3.1.1.  Simple motion detection](#311--simple-motion-detection)
+    - [3.1.1.  Camera Test](#311--camera-test)
+    - [3.1.2. Simple Motion Detection](#312-simple-motion-detection)
 
 # 1. Travail sur les modules ESP32
 
@@ -61,6 +62,21 @@ Pour le moment, le stream ne peut s'afficher uniquement si il n'y a qu'une seule
 
 # 3. Motion Capture
 
-## 3.1. Motion Detection
-### 3.1.1.  Simple motion detection
+## 3.1. Motion Detection 
+**Les codes du [3.1.1](#311) et du [3.1.2](#312) sont pris des exemples de la librairie
+[EloquentArduino](https://github.com/eloquentarduino/EloquentArduino).**
+### 3.1.1.  Camera Test
 
+**Code disponible
+[ici](https://github.com/MoOaAaa/StageFabLab/tree/main/ESP32/ESP32-Simple-Motion-Detection). Pris de
+l'exemple ici : [Test your
+camera](https://eloquentarduino.com/projects/esp32-arduino-motion-detection#test-your-camera)**<br/>
+Cette partie est là juste pour tester si la librairie fonctionnait correctement. J'ai eu quelques
+problèmes en utilisant PlatformIO sur VSCode, cependant si vous utilisez ArduinoIDE tout devrait
+bien aller. Au cas ou vous utilisez PlatformIO ou autre, voici les changements que j'ai apporté au
+code de l'exemple de EloquentArduino :
+> * Ajout de `#include "Arduino.h";` dans le fichier `main.cpp`.
+> * Changement de la déclaration des membres en `protected` des lignes 239-244 aux lignes 22-27 du
+> fichier [BaseImage.h](https://github.com/eloquentarduino/EloquentArduino/blob/master/src/eloquent/vision/image/BaseImage.h).
+
+### 3.1.2. Simple Motion Detection
