@@ -1,11 +1,9 @@
 /**
- * Camera motion detection demo
+ * Camera capture example
  */
 
 #include "Arduino.h"
 #include "eloquent.h"
-#include "eloquent/vision/motion/naive.h"
-
 
 // uncomment based on your camera and resolution
 
@@ -29,18 +27,13 @@
 //#include "eloquent/vision/camera/esp32/m5wide/gray/qqvga.h"
 
 
-#define THUMB_WIDTH 32
-#define THUMB_HEIGHT 24
-
-
-Eloquent::Vision::Motion::Naive<THUMB_WIDTH, THUMB_HEIGHT> detector;
-
-
 void setup() {
     delay(4000);
     Serial.begin(115200);
 
-    // turn on high freq for fast streaming speed
+    // turn on high frequency capturing
+    // in the case of OV767x camera, highFreq = 5 fps instead of 1 fps
+    // in the case of Esp32 camera, highFreq clock = 20 MHz instead of 10 MHz
     camera.setHighFreq();
 
     if (!camera.begin()) {
@@ -52,22 +45,7 @@ void setup() {
     else {
         Serial.println("Camera init OK");
     }
-
-    // wait for at least 10 frames to be processed before starting to detect
-    // motion (false triggers at start)
-    // then, when motion is detected, don't trigger for the next 10 frames
-    detector.startSinceFrameNumber(10);
-    detector.debounceMotionTriggerEvery(10);
-
-    // or, in one call
-    detector.throttle(10);
-
-    // trigger motion when at least 10% of pixels change intensity by
-    // at least 15 out of 255
-    detector.setPixelChangesThreshold(0.1);
-    detector.setIntensityChangeThreshold(15);
 }
-
 
 void loop() {
     if (!camera.capture()) {
@@ -76,13 +54,7 @@ void loop() {
         return;
     }
 
-    // perform motion detection on resized image for fast detection
-    camera.image.resize<THUMB_WIDTH, THUMB_HEIGHT>();
+    // resize for faster transmission over Serial port
+    camera.image.resize<40, 30>();
     camera.image.printAsJsonTo(Serial);
-    detector.update(camera.image);
-
-    // if motion is detected, print coordinates to serial in JSON format
-    if (detector.isMotionDetected()) {
-        detector.printAsJsonTo(Serial);
-    }
 }

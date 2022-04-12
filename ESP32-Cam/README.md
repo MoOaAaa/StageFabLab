@@ -68,15 +68,22 @@ Pour le moment, le stream ne peut s'afficher uniquement si il n'y a qu'une seule
 ### 3.1.1.  Camera Test
 
 **Code disponible
-[ici](https://github.com/MoOaAaa/StageFabLab/tree/main/ESP32/ESP32-Simple-Motion-Detection). Pris de
+[ici](https://github.com/MoOaAaa/StageFabLab/tree/main/ESP32/ESP32-Camera-Test). Pris de
 l'exemple ici : [Test your
 camera](https://eloquentarduino.com/projects/esp32-arduino-motion-detection#test-your-camera)**<br/>
 Cette partie est là juste pour tester si la librairie fonctionnait correctement. J'ai eu quelques
 problèmes en utilisant PlatformIO sur VSCode, cependant si vous utilisez ArduinoIDE tout devrait
 bien aller. Au cas ou vous utilisez PlatformIO ou autre, voici les changements que j'ai apporté au
 code de l'exemple de EloquentArduino :
-> * Ajout de `#include "Arduino.h";` dans le fichier `main.cpp`.
+> * Ajout de `#include "Arduino.h"` dans le fichier `main.cpp`.
 > * Changement de la déclaration des membres en `protected` des lignes 239-244 aux lignes 22-27 du
 > fichier [BaseImage.h](https://github.com/eloquentarduino/EloquentArduino/blob/master/src/eloquent/vision/image/BaseImage.h).
 
 ### 3.1.2. Simple Motion Detection
+**Code disponible
+[ici](https://github.com/MoOaAaa/StageFabLab/tree/main/ESP32/ESP32-Simple-Motion-Detection). Pris de
+l'exemple ici : [Realtime Motion Detection without
+PIR](https://eloquentarduino.com/projects/esp32-arduino-motion-detection#realtime-motion-detection-without-pir)**<br/>
+Ici, l'exemple à la caméra de détecter mouvement, grâce au changement de pixels dans l'image. La
+caméra envoie ensuite un message au moniteur de série pour dire qu'il y a eu un changement de pixels
+dans le flux d'images, donc un mouvement. Cela implique que la caméra soit statique lors de son fonctionnement.
