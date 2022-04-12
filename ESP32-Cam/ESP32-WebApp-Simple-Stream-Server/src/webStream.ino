@@ -143,7 +143,7 @@ void setup(){
   // if PSRAM IC present, init with UXGA resolution and higher JPEG quality
   //                      for larger pre-allocated frame buffer.
   if(psramFound()){
-    config.frame_size = FRAMESIZE_UXGA;
+    config.frame_size = FRAMESIZE_CIF;
     config.jpeg_quality = 10;
     config.fb_count = 2;
   } else {

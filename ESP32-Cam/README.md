@@ -4,7 +4,10 @@
 - [2. Suivis de développement](#2-suivis-de-développement)
   - [2.1. Stream de la caméra](#21-stream-de-la-caméra)
     - [2.1.1. Stream simple](#211-stream-simple)
-    - [2.1.2 Toggle du stream](#212-toggle-du-stream)
+    - [2.1.2. Toggle du stream](#212-toggle-du-stream)
+- [3. Motion Capture](#3-motion-capture)
+  - [3.1. Motion Detection](#31-motion-detection)
+    - [3.1.1.  Simple motion detection](#311--simple-motion-detection)
 
 # 1. Travail sur les modules ESP32
 
@@ -30,8 +33,10 @@ Pour ces travaux, voici le layouts du module ESP32 et de la caméra ESP32 que j'
 <br/>
 La caméra est reliée à un programmeur UBS ESP32-CAM-MB reliée en micro USB pour l'upload, mais dans
 le cas ou l'on ne dispose pas d'un programmeur MB, voici [un
-lien](https://all3dp.com/2/esp32-cam-arduino-tutorial/#:~:text=Restart%20Arduino%20IDE%20and%20connect,AI%20Thinker%20ESP32%2DCAM%E2%80%9D.)
+lien](https://all3dp.com/2/esp32-cam-arduino-tutorial/#:~:text=Restart%20Arduino%20IDE%20and%20connect,AI%20Thinker%20ESP32%2DCAM%E2%80%9D).
 montrant les différentes façon de connecter une caméra ESP32 à votre ordinateur.
+> Lors de l'upload du code, ne pas oublier d'appuyer sur le bouton `reset`, puis de retirer la
+> connexion entre `GPIO0` et `GND`.
 
 # 2. Suivis de développement
 
@@ -45,11 +50,17 @@ Il s'agît d'un serveur simple en avec une caméra ESP qui n'affiche que le flux
 Il est basé sur [ce code](https://registry.platformio.org/libraries/espressif/esp32-camera) (Dans la
 partie Readme, scroll jusqu'à l'exemple `JPEG HTTP Stream`).
 
-### 2.1.2 Toggle du stream
+### 2.1.2. Toggle du stream
 
 **Code disponible
 [ici](https://github.com/MoOaAaa/StageFabLab/tree/main/ESP32/ESP32-WebApp-Stream-Toggle). Base
-reprise du [2.1.1](#211)**
+reprise du [2.1.1](#211)** <br/>
 Il s'agît d'un site simple, avec un bouton pour montrer le stream ou non avec un bouton.
 Pour le moment, le stream ne peut s'afficher uniquement si il n'y a qu'une seule instance du stream
 (celle du site uniquement)
+
+# 3. Motion Capture
+
+## 3.1. Motion Detection
+### 3.1.1.  Simple motion detection
+
