@@ -9,6 +9,7 @@
   - [3.1. Motion Detection](#31-motion-detection)
     - [3.1.1.  Camera Test](#311--camera-test)
     - [3.1.2. Simple Motion Detection](#312-simple-motion-detection)
+    - [Motion Detection Stream](#motion-detection-stream)
 
 # 1. Travail sur les modules ESP32
 
@@ -55,7 +56,7 @@ partie Readme, scroll jusqu'à l'exemple `JPEG HTTP Stream`).
 
 **Code disponible
 [ici](https://github.com/MoOaAaa/StageFabLab/tree/main/ESP32/ESP32-WebApp-Stream-Toggle). Base
-reprise du [2.1.1](#211)** <br/>
+reprise du [2.1.1](#211-stream-simple)** <br/>
 Il s'agît d'un site simple, avec un bouton pour montrer le stream ou non avec un bouton.
 Pour le moment, le stream ne peut s'afficher uniquement si il n'y a qu'une seule instance du stream
 (celle du site uniquement)
@@ -63,7 +64,7 @@ Pour le moment, le stream ne peut s'afficher uniquement si il n'y a qu'une seule
 # 3. Motion Capture
 
 ## 3.1. Motion Detection 
-**Les codes du [3.1.1](#311) et du [3.1.2](#312) sont pris des exemples de la librairie
+**Les codes du [3.1.1](#311-camera-test) et du [3.1.2](#312-simple-motion-detection) sont pris des exemples de la librairie
 [EloquentArduino](https://github.com/eloquentarduino/EloquentArduino).**
 ### 3.1.1.  Camera Test
 
@@ -86,4 +87,19 @@ l'exemple ici : [Realtime Motion Detection without
 PIR](https://eloquentarduino.com/projects/esp32-arduino-motion-detection#realtime-motion-detection-without-pir)**<br/>
 Ici, l'exemple à la caméra de détecter mouvement, grâce au changement de pixels dans l'image. La
 caméra envoie ensuite un message au moniteur de série pour dire qu'il y a eu un changement de pixels
-dans le flux d'images, donc un mouvement. Cela implique que la caméra soit statique lors de son fonctionnement.
+dans le flux d'images, donc un mouvement. Cela implique que la caméra soit statique lors de son
+fonctionnement.
+
+### Motion Detection Stream
+**Code disponible
+[ici](https://github.com/MoOaAaa/StageFabLab/tree/main/ESP32/ESP32-Motion-Detection-Stream). Basé
+sur cet exemple
+[ci](https://eloquentarduino.github.io/2020/06/easy-esp32-camera-http-video-streaming-server/) mais
+largement changé (partie serveur web reprise du [2.1.1](#211-stream-simple), plus refactoring de la
+librairie pour enlever les erreurs)**
+Dans ce test, j'ai voulu voir si on pouvait lancer un stream à partir du moment où la caméra
+détectait un mouvement. Avec la librairie c'était très simple à réaliser (en plus de suivre les
+tutos), mais différentes versions de la librairie donc du code m'ont fait perdre beaucoup de temps.
+Cependant, après quelques efforts j'ai pu effectivement lancer un stream lorsque la caméra détecte
+du mouvement. Il ne me reste plus qu'à essayer de fixer la caméra sur une des imprimantes 3D et de
+voir si elle détecte quand l'impression se lance!
