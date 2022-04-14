@@ -5,11 +5,13 @@
   - [2.1. Stream de la caméra](#21-stream-de-la-caméra)
     - [2.1.1. Stream simple](#211-stream-simple)
     - [2.1.2. Toggle du stream](#212-toggle-du-stream)
-- [3. Motion Capture](#3-motion-capture)
-  - [3.1. Motion Detection](#31-motion-detection)
-    - [3.1.1.  Camera Test](#311--camera-test)
-    - [3.1.2. Simple Motion Detection](#312-simple-motion-detection)
-    - [Motion Detection Stream](#motion-detection-stream)
+  - [2.2. Motion Capture](#22-motion-capture)
+    - [2.2.1.  Camera Test](#221--camera-test)
+    - [2.2.2. Simple Motion Detection](#222-simple-motion-detection)
+    - [2.2.3. Motion Detection Stream](#223-motion-detection-stream)
+- [3. Mise en place sur les imprimantes 3D](#3-mise-en-place-sur-les-imprimantes-3d)
+  - [3.1. Imprimantes du FabLab](#31-imprimantes-du-fablab)
+  - [3.2. Support de caméra](#32-support-de-caméra)
 
 # 1. Travail sur les modules ESP32
 
@@ -61,12 +63,11 @@ Il s'agît d'un site simple, avec un bouton pour montrer le stream ou non avec u
 Pour le moment, le stream ne peut s'afficher uniquement si il n'y a qu'une seule instance du stream
 (celle du site uniquement)
 
-# 3. Motion Capture
+## 2.2. Motion Capture
 
-## 3.1. Motion Detection 
 **Les codes du [3.1.1](#311-camera-test) et du [3.1.2](#312-simple-motion-detection) sont pris des exemples de la librairie
 [EloquentArduino](https://github.com/eloquentarduino/EloquentArduino).**
-### 3.1.1.  Camera Test
+### 2.2.1.  Camera Test
 
 **Code disponible
 [ici](https://github.com/MoOaAaa/StageFabLab/tree/main/ESP32/ESP32-Camera-Test). Pris de
@@ -80,7 +81,7 @@ code de l'exemple de EloquentArduino :
 > * Changement de la déclaration des membres en `protected` des lignes 239-244 aux lignes 22-27 du
 > fichier [BaseImage.h](https://github.com/eloquentarduino/EloquentArduino/blob/master/src/eloquent/vision/image/BaseImage.h).
 
-### 3.1.2. Simple Motion Detection
+### 2.2.2. Simple Motion Detection
 **Code disponible
 [ici](https://github.com/MoOaAaa/StageFabLab/tree/main/ESP32/ESP32-Simple-Motion-Detection). Pris de
 l'exemple ici : [Realtime Motion Detection without
@@ -90,16 +91,32 @@ caméra envoie ensuite un message au moniteur de série pour dire qu'il y a eu u
 dans le flux d'images, donc un mouvement. Cela implique que la caméra soit statique lors de son
 fonctionnement.
 
-### Motion Detection Stream
+### 2.2.3. Motion Detection Stream
 **Code disponible
 [ici](https://github.com/MoOaAaa/StageFabLab/tree/main/ESP32/ESP32-Motion-Detection-Stream). Basé
 sur cet exemple
 [ci](https://eloquentarduino.github.io/2020/06/easy-esp32-camera-http-video-streaming-server/) mais
 largement changé (partie serveur web reprise du [2.1.1](#211-stream-simple), plus refactoring de la
-librairie pour enlever les erreurs)**
+librairie pour enlever les erreurs)**<br />
 Dans ce test, j'ai voulu voir si on pouvait lancer un stream à partir du moment où la caméra
 détectait un mouvement. Avec la librairie c'était très simple à réaliser (en plus de suivre les
 tutos), mais différentes versions de la librairie donc du code m'ont fait perdre beaucoup de temps.
 Cependant, après quelques efforts j'ai pu effectivement lancer un stream lorsque la caméra détecte
 du mouvement. Il ne me reste plus qu'à essayer de fixer la caméra sur une des imprimantes 3D et de
 voir si elle détecte quand l'impression se lance!
+
+# 3. Mise en place sur les imprimantes 3D
+
+## 3.1. Imprimantes du FabLab
+Le fablab dispose de plusieurs imprimantes 3D, toutes du model [Prusa
+Mk3S](https://www.prusa3d.com/category/original-prusa-i3-mk3s/). Le but avec ces imprimantes serait
+idéalement de faire pour que tout le monde puisse accéder au stream lorsque qu'un site internet du
+FabLab sera en place. Mais ce sera dans le futur, car je n'ai toujours pas trouvé de solution au
+problème du client unique sur le stream de la caméra. Donc pour l'instant nous allons nous contenter
+d'attacher la caméra sur l'imprimante avec un support mobile.
+
+## 3.2. Support de caméra
+ J'ai trouvé [ce support](https://www.thingiverse.com/thing:3807144) sur
+ [Thingiverse](https://www.thingiverse.com/), qui me permettrait d'accrocher la caméra à
+ l'imprimante. Il me suffit maintenant juste de tester les caméras pour savoir quelle adresse IP
+ correspond à quelle caméra.
