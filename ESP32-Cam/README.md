@@ -116,7 +116,7 @@ problème du client unique sur le stream de la caméra. Donc pour l'instant nous
 d'attacher la caméra sur l'imprimante avec un support mobile.
 
 ## 3.2. Support de caméra
- J'ai trouvé [ce support](https://www.thingiverse.com/thing:3807144) sur
- [Thingiverse](https://www.thingiverse.com/), qui me permettrait d'accrocher la caméra à
- l'imprimante. Il me suffit maintenant juste de tester les caméras pour savoir quelle adresse IP
- correspond à quelle caméra.
+ J'ai trouvé [cette boîte](https://www.thingiverse.com/thing:3463679) sur
+ [Thingiverse](https://www.thingiverse.com/), qui me permettrait de mettre la caméra à
+ l'intérieur. Il me suffit maintenant juste de tester les caméras pour savoir quelle adresse IP
+ correspond à quelle caméra et de modifier la boîte pour pouvoir l'accrocher à l'imprimante.
