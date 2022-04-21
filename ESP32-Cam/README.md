@@ -34,10 +34,10 @@ Pour ces travaux, voici le layouts du module ESP32 et de la caméra ESP32 que j'
         src="https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2020/03/ESP32-CAM-pinout-new.png?quality=100&strip=all&ssl=1"
         alt="ESP32 CAM"
     />
-<br/>
+
+
 La caméra est reliée à un programmeur UBS ESP32-CAM-MB reliée en micro USB pour l'upload, mais dans
-le cas ou l'on ne dispose pas d'un programmeur MB, voici [un
-lien](https://all3dp.com/2/esp32-cam-arduino-tutorial/#:~:text=Restart%20Arduino%20IDE%20and%20connect,AI%20Thinker%20ESP32%2DCAM%E2%80%9D)
+le cas ou l'on ne dispose pas d'un programmeur MB, voici [un lien](https://all3dp.com/2/esp32-cam-arduino-tutorial/#:~:text=Restart%20Arduino%20IDE%20and%20connect,AI%20Thinker%20ESP32%2DCAM%E2%80%9D)
 montrant les différentes façon de connecter une caméra ESP32 à votre ordinateur. <br/>
 
 > Lors de l'upload du code, ne pas oublier d'appuyer sur le bouton `reset`, puis de retirer la
