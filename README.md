@@ -12,6 +12,7 @@
  dossier](https://github.com/MoOaAaa/StageFabLab/tree/main/ESP32-Cam).
  
  # 2. Site internet
+ Ici, j'ai continuer le site internet fait par les stagiaires de l'année dernière. Plus de détails dans [ce dossier](https://github.com/MoOaAaa/StageFabLab/tree/main/Website).
 
  # 3. Robots
 
