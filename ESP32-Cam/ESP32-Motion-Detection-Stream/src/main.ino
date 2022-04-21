@@ -21,8 +21,8 @@ using namespace Eloquent::Vision::Cam;
 
 Eloquent::Vision::Motion::Naive<DEST_WIDTH, DEST_HEIGHT> detector;
 
-const char* ssid = "PC-P-68TTXZ2 4255";
-const char* password = "99w6C}51";
+const char* ssid = "ssid";
+const char* password = "password";
 
 #define PART_BOUNDARY "123456789000000000000987654321"
 

@@ -41,6 +41,15 @@ lien](https://all3dp.com/2/esp32-cam-arduino-tutorial/#:~:text=Restart%20Arduino
 montrant les différentes façon de connecter une caméra ESP32 à votre ordinateur.
 > Lors de l'upload du code, ne pas oublier d'appuyer sur le bouton `reset`, puis de retirer la
 > connexion entre `GPIO0` et `GND`.
+<br/>
+
+Autre point important dans mon cas, le wifi du cégep étant un wifi de type `WPA2 - Entreprise`, la
+connection se fait avec les identifiants personnels des étudiants/employés (pour moi, numéro
+étudiant et mot de passe). Pour me faciliter la chose pour le moment, j'ai créé un point d'accès
+mobile sur mon pc et ai utilisé cette connection pour la caméra. Cependant, après quelques
+recherches j'ai découvert qu'il était possible de connecter les caméras à un wifi `WPA2` (exemple
+[ici](https://github.com/martinius96/ESP32-eduroam/blob/master/2021/experimental_example/experimental_example.ino)
+avec un wifi eduroam).
 
 # 2. Suivis de développement
 

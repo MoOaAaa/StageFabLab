@@ -21,8 +21,8 @@
 
 #include "camera_pins.h"
 
-const char* ssid = "PC-P-68TTXZ2 4255";
-const char* password = "99w6C}51";
+const char* ssid = "ssid";
+const char* password = "password";
 
 static const char* _STREAM_CONTENT_TYPE = "multipart/x-mixed-replace;boundary=" PART_BOUNDARY;
 static const char* _STREAM_BOUNDARY = "\r\n--" PART_BOUNDARY "\r\n";
