@@ -39,9 +39,9 @@ La caméra est reliée à un programmeur UBS ESP32-CAM-MB reliée en micro USB p
 le cas ou l'on ne dispose pas d'un programmeur MB, voici [un
 lien](https://all3dp.com/2/esp32-cam-arduino-tutorial/#:~:text=Restart%20Arduino%20IDE%20and%20connect,AI%20Thinker%20ESP32%2DCAM%E2%80%9D)
 montrant les différentes façon de connecter une caméra ESP32 à votre ordinateur. <br/>
+
 > Lors de l'upload du code, ne pas oublier d'appuyer sur le bouton `reset`, puis de retirer la
 > connexion entre `GPIO0` et `GND`.
-<br/>
 
 Autre point important dans mon cas, le wifi du cégep étant un wifi de type `WPA2 - Entreprise`, la
 connection se fait avec les identifiants personnels des étudiants/employés (pour moi, numéro
