@@ -46,8 +46,9 @@ Lego](https://www.lego.com/en-ca/themes/mindstorms/buildarobot), via les liens s
   
 ## 3.2. Programmation du robot
 Avec le robot Mindstorms, vous pouvez programmer la brique EV3 sur PC/Mac ou Tablette.
-Page de téléchargement
-[ici](https://www.lego.com/en-ca/themes/mindstorms/downloads#blteac6bf5aead3d490).
+**Page de téléchargement
+[ici](https://www.lego.com/en-ca/themes/mindstorms/downloads#blteac6bf5aead3d490).**
+<br/>
 Il est aussi possible de programmer et contrôler le robot depuis une tablette. L'iPad du Fablab
 dispose des deux applications nécessaires à la communication avec le robot (Lego Mindstorms EV3 Home
 et Robot Commander App).
