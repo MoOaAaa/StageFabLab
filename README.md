@@ -17,6 +17,7 @@
  # 3. Robots
 
  # 4. Makey-Makey
+ Avec les 2 autres stagiaires, nous avons créé un jeu de rythme avec les Makey-Makey. 
 
 
 

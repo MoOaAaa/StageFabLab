@@ -33,8 +33,10 @@ est déjà proposé sur le github et il recrée plusieurs actions pour rendre le
 > Elle contient des didacticiels pour le montage et la programmation de la voiture.
 
 # 3. Lego Mindstorms EV3
-> Je n'ai personnellement testé que la forme Tracker du Mindstorm, donc les programmes que j'ai fait
-> ne sont que les tutos (missions) proposées par Lego. Disponibles [ici](https://github.com/MoOaAaa/StageFabLab/tree/main/Robots/Lego%20Mindstorms%20EV3/Tracker).
+> Je n'ai personnellement testé que la forme Tracker et Everstorm du Mindstorm, donc les programmes que j'ai fait
+> ne sont que les tutos (missions) proposées par Lego. [Disponible
+> ici](https://github.com/MoOaAaa/StageFabLab/tree/main/Robots/Lego%20Mindstorms%20EV3/Tracker) pour
+> le Tracker, Everstorm ayant été testé sur l'iPad du lab.
 ## 3.1. Montage des différentes formes du robot
 Toutes les formes sont disponbles sur [le site
 Lego](https://www.lego.com/en-ca/themes/mindstorms/buildarobot), via les liens suivants :
