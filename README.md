@@ -15,6 +15,7 @@
  Ici, j'ai continuer le site internet fait par les stagiaires de l'année dernière. Plus de détails dans [ce dossier](https://github.com/MoOaAaa/StageFabLab/tree/main/Website).
 
  # 3. Robots
+ Expérimentations de quelques robots, principalement à des fins de tests pour des ateliers.
 
  # 4. Makey-Makey
  Avec les 2 autres stagiaires, nous avons créé un jeu de rythme avec les Makey-Makey. 
