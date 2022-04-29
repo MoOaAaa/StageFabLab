@@ -6,7 +6,7 @@
     - [2.1.1. Stream simple](#211-stream-simple)
     - [2.1.2. Toggle du stream](#212-toggle-du-stream)
   - [2.2. Motion Capture](#22-motion-capture)
-    - [2.2.1.  Camera Test](#221--camera-test)
+    - [2.2.1. Camera Test](#221-camera-test)
     - [2.2.2. Simple Motion Detection](#222-simple-motion-detection)
     - [2.2.3. Motion Detection Stream](#223-motion-detection-stream)
 - [3. Mise en place sur les imprimantes 3D](#3-mise-en-place-sur-les-imprimantes-3d)
@@ -74,9 +74,9 @@ Pour le moment, le stream ne peut s'afficher uniquement si il n'y a qu'une seule
 
 ## 2.2. Motion Capture
 
-**Les codes du [3.1.1](#311-camera-test) et du [3.1.2](#312-simple-motion-detection) sont pris des exemples de la librairie
+**Les codes du [2.2.1](#221-camera-test) et du [2.2.2](#222-simple-motion-detection) sont pris des exemples de la librairie
 [EloquentArduino](https://github.com/eloquentarduino/EloquentArduino).**
-### 2.2.1.  Camera Test
+### 2.2.1. Camera Test
 
 **Code disponible
 [ici](https://github.com/MoOaAaa/StageFabLab/tree/main/ESP32/ESP32-Camera-Test). Pris de
