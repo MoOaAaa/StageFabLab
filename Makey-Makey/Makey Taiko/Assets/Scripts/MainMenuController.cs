@@ -71,20 +71,25 @@ public class MainMenuController : MonoBehaviour
     }
 
     /**
-     * 
+     * Permet de lancer la scene de jeu
      */
     public void startGame()
     {
         SceneManager.LoadScene("SampleScene");
     }
 
+    /**
+     * Permet d'afficher le menu des settings
+     */
     public void settings()
     {
         mainMenu.SetActive(false);
         settingsMenu.SetActive(true);
     }
 
-
+    /**
+     * Permet de quitter l'application 
+     */
     public void exitGame()
     {
         Application.Quit();
