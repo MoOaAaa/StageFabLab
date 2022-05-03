@@ -1,0 +1,6 @@
+{
+    "port": "COM13",
+    "board": "arduino:avr:uno",
+    "programmer": "AVRISP mkII",
+    "sketch": "Obstacle.ino"
+}
