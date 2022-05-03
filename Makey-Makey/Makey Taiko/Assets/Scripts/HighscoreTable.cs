@@ -25,9 +25,11 @@ public class HighscoreTable : MonoBehaviour
 
         entryTemplate.gameObject.SetActive(false);
 
+        
+
         //=======================================//
         //             Add an entry              //
-        //AddHighscoreEntry(0, "AAA");
+        AddHighscoreEntry(PlayerPrefs.GetInt("Score"), "AAA");
         //                                       //
         //=======================================//
 

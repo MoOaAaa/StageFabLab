@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class ListeCercle : MonoBehaviour
 {
-    // Création de la liste de tous les cercles
+    // Crï¿½ation de la liste de tous les cercles
     [SerializeField] private List<Transform> allChildren;
     public Transform premierCercle;
     public string couleurPremierCercle;
 
-    // Récupération de la valeur des points
+    // Rï¿½cupï¿½ration de la valeur des points
     public JoueurUI MonJoueur;
 
     // Image du Socle
@@ -32,7 +32,7 @@ public class ListeCercle : MonoBehaviour
 
     private void Awake()
     {
-        // Fixer le script à 60 FPS
+        // Fixer le script ï¿½ 60 FPS
         Application.targetFrameRate = 60;
     }
 
@@ -51,7 +51,8 @@ public class ListeCercle : MonoBehaviour
 
     private void endReached(VideoPlayer source)
     {
-        SceneManager.LoadScene("EndScreen");
+        PlayerPrefs.SetInt("Score", MonJoueur.point);
+        SceneManager.LoadScene("Leaderboard");
     }
 
     void PremierEnfant()
@@ -65,13 +66,13 @@ public class ListeCercle : MonoBehaviour
 
     private void Update()
     {
-        // Si la video est prête alors
+        // Si la video est prï¿½te alors
         if (videoPlayer.GetComponent<VideoPlayer>().waitForFirstFrame)
         {
-            // Vérifier que la liste n'est pas vide
+            // Vï¿½rifier que la liste n'est pas vide
             if (allChildren.Count != 0)
             {
-                // Si le cercle sort de l'écran alors on le détruit
+                // Si le cercle sort de l'ï¿½cran alors on le dï¿½truit
                 if (premierCercle.position.x <= -13)
                 {
                     // Reset combo
