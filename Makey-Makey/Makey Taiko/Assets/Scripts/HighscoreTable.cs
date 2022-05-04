@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Text.RegularExpressions;
+using TMPro;
 
 public class HighscoreTable : MonoBehaviour
 {
@@ -16,20 +18,23 @@ public class HighscoreTable : MonoBehaviour
 
     [SerializeField]
     private List<HighscoreEntry> highscoreEntryList;
+
+    [SerializeField]
+    private Transform nameInputField;
+
+    [SerializeField]
+    private string playerName;
     
     // Start is called before the first frame update
     void Start()
     {
         entryContainer = transform.Find("HighScoreEntryContainer");
         entryTemplate = entryContainer.Find("HighScoreEntryTemplate");
-
-        entryTemplate.gameObject.SetActive(false);
-
-        
+        nameInputField = transform.Find("NameInputField");
 
         //=======================================//
         //             Add an entry              //
-        AddHighscoreEntry(PlayerPrefs.GetInt("Score"), "AAA");
+        //AddHighscoreEntry(10, "AAA");
         //                                       //
         //=======================================//
 
@@ -46,44 +51,27 @@ public class HighscoreTable : MonoBehaviour
         //                                       //
         //=======================================//
 
-        string jsonString = PlayerPrefs.GetString("HighscoreTable");
-        Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
+        Refresh();
+    }
 
-        // Sort entry list by Score
-        for (int i = 0; i < highscores.highscoreEntryList.Count; i++)
+    void Update()
+    {
+        string playerName = "";
+        if (Input.GetKeyDown(KeyCode.Return))
         {
-            for (int j = i + 1; j < highscores.highscoreEntryList.Count; j++)
+            
+            playerName = nameInputField.GetComponent<InputField>().text;
+            if (Regex.IsMatch(playerName, @"^[a-zA-Z]+$") && playerName.Length == 3)
             {
-                if (highscores.highscoreEntryList[i].score < highscores.highscoreEntryList[j].score)
-                {
-                    // Swap
-                    HighscoreEntry tmp = highscores.highscoreEntryList[i];
-                    highscores.highscoreEntryList[i] = highscores.highscoreEntryList[j];
-                    highscores.highscoreEntryList[j] = tmp;
-                }
-            }
-        }
-        // The --- entry must be at the botoom of the leaderboard
-        for (int i = 0; i < highscores.highscoreEntryList.Count; i++)
-        {
-            if (highscores.highscoreEntryList[i].name == "---" && i != 0)
-            {
-                HighscoreEntry tmp = highscores.highscoreEntryList[i];
-                highscores.highscoreEntryList[i] = highscores.highscoreEntryList[highscores.highscoreEntryList.Count - 1];
-                highscores.highscoreEntryList[highscores.highscoreEntryList.Count - 1] = tmp;
-            }
-        }
-
-        highscoreEntryTransformList = new List<Transform>();
-        foreach (HighscoreEntry highscoreEntry in highscores.highscoreEntryList)
-        {
-            if (highscoreEntry.name == "---")
-            {
-                CreateHighscoreEntryTransform(highscoreEntry, entryContainer, highscoreEntryTransformList, true);
+                Debug.Log("Valid name");
+                AddHighscoreEntry(PlayerPrefs.GetInt("Score"), playerName);
+                Refresh();
+                transform.Find("NameInput").gameObject.SetActive(false);
             }
             else
             {
-                CreateHighscoreEntryTransform(highscoreEntry, entryContainer, highscoreEntryTransformList, false);
+                Debug.Log("Invalid name");
+                playerName = "";
             }
         }
     }
@@ -185,6 +173,50 @@ public class HighscoreTable : MonoBehaviour
         string json = JsonUtility.ToJson(highscores);
         PlayerPrefs.SetString("HighscoreTable", json);
         PlayerPrefs.Save();
+    }
+
+    private void Refresh()
+    {
+        string jsonString = PlayerPrefs.GetString("HighscoreTable");
+        Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
+
+        // Sort entry list by Score
+        for (int i = 0; i < highscores.highscoreEntryList.Count; i++)
+        {
+            for (int j = i + 1; j < highscores.highscoreEntryList.Count; j++)
+            {
+                if (highscores.highscoreEntryList[i].score < highscores.highscoreEntryList[j].score)
+                {
+                    // Swap
+                    HighscoreEntry tmp = highscores.highscoreEntryList[i];
+                    highscores.highscoreEntryList[i] = highscores.highscoreEntryList[j];
+                    highscores.highscoreEntryList[j] = tmp;
+                }
+            }
+        }
+        // The --- entry must be at the botoom of the leaderboard
+        for (int i = 0; i < highscores.highscoreEntryList.Count; i++)
+        {
+            if (highscores.highscoreEntryList[i].name == "---" && i != 0)
+            {
+                HighscoreEntry tmp = highscores.highscoreEntryList[i];
+                highscores.highscoreEntryList[i] = highscores.highscoreEntryList[highscores.highscoreEntryList.Count - 1];
+                highscores.highscoreEntryList[highscores.highscoreEntryList.Count - 1] = tmp;
+            }
+        }
+
+        highscoreEntryTransformList = new List<Transform>();
+        foreach (HighscoreEntry highscoreEntry in highscores.highscoreEntryList)
+        {
+            if (highscoreEntry.name == "---")
+            {
+                CreateHighscoreEntryTransform(highscoreEntry, entryContainer, highscoreEntryTransformList, true);
+            }
+            else
+            {
+                CreateHighscoreEntryTransform(highscoreEntry, entryContainer, highscoreEntryTransformList, false);
+            }
+        }
     }
 
     private class Highscores 
