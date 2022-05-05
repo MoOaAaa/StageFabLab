@@ -402,7 +402,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AAA
+  m_Text: ---
 --- !u!222 &200552502
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -434,15 +434,15 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 283087286}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 122375582}
   - {fileID: 732920780}
   - {fileID: 1454714610}
-  m_Father: {fileID: 1061995971}
-  m_RootOrder: 2
+  m_Father: {fileID: 854302830}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -646,7 +646,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 99999
+  m_Text: 0
 --- !u!222 &481053505
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -989,6 +989,7 @@ RectTransform:
   - {fileID: 2071674636}
   - {fileID: 483699802}
   - {fileID: 949814217}
+  - {fileID: 283087287}
   m_Father: {fileID: 1061995971}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1013,7 +1014,8 @@ MonoBehaviour:
   entryTemplate: {fileID: 0}
   highscoreEntryTransformList: []
   highscoreEntryList: []
-  nameInputField: {fileID: 0}
+  nameInput: {fileID: 0}
+  nameInputField: {fileID: 1454714610}
   playerName: 
 --- !u!1 &932936571
 GameObject:
@@ -1325,7 +1327,6 @@ RectTransform:
   m_Children:
   - {fileID: 648126804}
   - {fileID: 854302830}
-  - {fileID: 283087287}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1780,7 +1781,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10TH
+  m_Text: ---
 --- !u!222 &1998937087
 CanvasRenderer:
   m_ObjectHideFlags: 0

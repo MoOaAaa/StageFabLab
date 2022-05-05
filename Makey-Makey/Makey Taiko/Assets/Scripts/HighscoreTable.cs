@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Text.RegularExpressions;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class HighscoreTable : MonoBehaviour
@@ -20,6 +21,9 @@ public class HighscoreTable : MonoBehaviour
     private List<HighscoreEntry> highscoreEntryList;
 
     [SerializeField]
+    private Transform nameInput;
+
+    [SerializeField]
     private Transform nameInputField;
 
     [SerializeField]
@@ -30,7 +34,8 @@ public class HighscoreTable : MonoBehaviour
     {
         entryContainer = transform.Find("HighScoreEntryContainer");
         entryTemplate = entryContainer.Find("HighScoreEntryTemplate");
-        nameInputField = transform.Find("NameInputField");
+        nameInput = transform.Find("NameInput");
+        nameInputField = nameInput.Find("NameInputField");
 
         //=======================================//
         //             Add an entry              //
@@ -40,7 +45,7 @@ public class HighscoreTable : MonoBehaviour
 
         //=======================================//
         //             Del an entry              //
-        //DelHighscoreEntry("AAA");
+        DelHighscoreEntry(" OM");
         //                                       //
         //=======================================//
 
@@ -51,28 +56,36 @@ public class HighscoreTable : MonoBehaviour
         //                                       //
         //=======================================//
 
-        Refresh();
+        //Refresh();
     }
 
     void Update()
     {
+        bool validName = false;
         string playerName = "";
         if (Input.GetKeyDown(KeyCode.Return))
         {
             
-            playerName = nameInputField.GetComponent<InputField>().text;
+            playerName = nameInputField.GetComponent<TMP_InputField>().text;
             if (Regex.IsMatch(playerName, @"^[a-zA-Z]+$") && playerName.Length == 3)
             {
                 Debug.Log("Valid name");
                 AddHighscoreEntry(PlayerPrefs.GetInt("Score"), playerName);
                 Refresh();
-                transform.Find("NameInput").gameObject.SetActive(false);
+                nameInput.gameObject.SetActive(false);
+                validName = true;
             }
             else
             {
                 Debug.Log("Invalid name");
                 playerName = "";
             }
+        }
+
+        if (validName == true)
+        {
+            StartCoroutine(WaitForSeconds(5));
+            
         }
     }
 
@@ -217,6 +230,14 @@ public class HighscoreTable : MonoBehaviour
                 CreateHighscoreEntryTransform(highscoreEntry, entryContainer, highscoreEntryTransformList, false);
             }
         }
+
+        entryTemplate.gameObject.SetActive(false);
+    }
+
+    IEnumerator WaitForSeconds(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        SceneManager.LoadScene("EndScreen");
     }
 
     private class Highscores 
