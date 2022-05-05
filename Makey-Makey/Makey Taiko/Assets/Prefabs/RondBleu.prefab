@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 582201747351350656}
-  - component: {fileID: 6905552242274492231}
+  - component: {fileID: 5583883467875434068}
   m_Layer: 0
   m_Name: RondBleu
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6905552242274492231
+--- !u!114 &5583883467875434068
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,6 +46,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 7
   couleur: Bleu
+  songBpm: 0
+  secPerBeat: 0
+  songPosition: 0
+  songPositionInBeat: 0
+  dspSongTime: 0
+  firstBeatOffset: 0
+  previousDspTime: 0
+  musicSource: {fileID: 0}
   videoPlayer: {fileID: 0}
 --- !u!1 &5456173307358012677
 GameObject:
