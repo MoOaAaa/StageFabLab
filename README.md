@@ -2,7 +2,7 @@
 
 **Données sur les tâches réalisées durant mon stage de fin de DUT info.**
  
-- [1. Modèle 3D et gcode](#1-modèle-3D-et-gcode)
+- [1. Modèle 3D et gcode](#1-modèle-3d-et-gcode)
 - [2. Capteurs arduino](#2-capteurs-arduino)
 - [3. Arduino ESP32 modules](#3-arduino-esp32-modules)
 - [4. Panel de LED](#4-panel-de-led)
@@ -24,7 +24,7 @@ Dans cette partie, j'utilise des modules wifis ESP32 en Arduinos. Plus de détai
 Dans ce dossier un raaspberry pi 3 est utilisé pour contrôler un panel de 32x32 LED, afin d'afficher des gifs animer sur celui-ci. Plus de détails dans [ce dossier](https://github.com/MoOaAaa/StageFabLab/tree/main/LEDPanel).
 
 # 5. Machine à cocktails
-Le projet ici est de construire une machine à cocktail autonome pour réaliser des cocktails ou boissons suivant le choix de l'utilisateur. Plus de détails dans [ce dossier](https://github.com/MoOaAaa/StageFabLab/tree/main/Machine%20cocktails).
+Le projet ici est de construire une machine à cocktail autonome pour réaliser des cocktails ou boissons suivant le choix de l'utilisateur. Plus de détails dans [ce dossier](https://github.com/MoOaAaa/StageFabLab/tree/main/Machine%20a%20cocktail).
 
 # 6. Makey-Makey
 Avec les 2 autres stagiaires, nous avons créé un jeu de rythme avec les Makey-Makey.  Plus de détails dans [ce dossier](https://github.com/MoOaAaa/StageFabLab/tree/main/Makey-Makey).
