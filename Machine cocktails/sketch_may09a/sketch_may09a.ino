@@ -22,38 +22,38 @@ void loop() {
   
   digitalWrite(digPin8, HIGH);
   lcd.setCursor(0, 0);
-  lcd.print("Moteur pin 8 en cours");
+  lcd.print("Moteur pin 8");
   delay(1000);
   lcd.clear();
   
   digitalWrite(digPin8, LOW);
   lcd.setCursor(0, 0);
-  lcd.print("Moteur pin 8 terminé");
+  lcd.print("Moteur pin 8");
   delay(1000);
   lcd.clear();
   
   digitalWrite(digPin9, HIGH);
   lcd.setCursor(0, 0);
-  lcd.print("Moteur pin 9 en cours");
+  lcd.print("Moteur pin 9");
   delay(1000);
   lcd.clear();
   
   
   digitalWrite(digPin9, LOW);
   lcd.setCursor(0, 0);
-  lcd.print("Moteur pin 9 terminé");
+  lcd.print("Moteur pin 9");
   delay(1000);
   lcd.clear();
   
   digitalWrite(digPin10, HIGH);
   lcd.setCursor(0, 0);
-  lcd.print("Moteur pin 10 en cours");
+  lcd.print("Moteur pin 10");
   delay(1000);
   lcd.clear();
   
   digitalWrite(digPin10, LOW);
   lcd.setCursor(0, 0);
-  lcd.print("Moteur pin 10 terminé");
+  lcd.print("Moteur pin 10");
   delay(1000);
   lcd.clear();
 }
