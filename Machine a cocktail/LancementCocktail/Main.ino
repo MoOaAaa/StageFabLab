@@ -174,13 +174,10 @@ void CocktailMiamiDrink() {
 void CocktailLemonParadise() {
     digitalWrite(moteur1, HIGH);
     digitalWrite(moteur2, HIGH);
-    digitalWrite(moteur3, HIGH);
     delay(1000);
     digitalWrite(moteur1, LOW);
-    delay(500);
+    delay(3000);
     digitalWrite(moteur2, LOW);
-    delay(200);
-    digitalWrite(moteur3, LOW);
     delay(1000);
     preparationEnCours = false;
 }
