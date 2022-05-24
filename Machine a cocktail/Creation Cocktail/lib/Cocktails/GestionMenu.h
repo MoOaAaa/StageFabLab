@@ -17,9 +17,9 @@ class GestionMenu {
         int mn_moteur2;
         int mn_moteur3;
 
-        int mn_vitesseMoteur1;
-        int mn_vitesseMoteur2;
-        int mn_vitesseMoteur3;
+        float mn_vitesseMoteur1;
+        float mn_vitesseMoteur2;
+        float mn_vitesseMoteur3;
 
         int mn_VRy;
         int mn_VRx;
@@ -27,11 +27,6 @@ class GestionMenu {
 
         // ❴✠❵┅━━━━━━┅❴✠❵
         int lastJoystickRead;
-
-        // ❴✠❵┅━━━ Boolean ━━━┅❴✠❵
-        bool preparationEnCours = false;
-        bool premiereSelection = false;
-        bool creationEnCours = false;
 
         // ❴✠❵┅━━━ Variables ━━━┅❴✠❵
         int pageActuelle = 0;
@@ -42,9 +37,14 @@ class GestionMenu {
         int quantiteMoteur3 = 0;
 
     public :
+        // ❴✠❵┅━━━ Boolean ━━━┅❴✠❵
+        bool preparationEnCours = false;
+        bool premiereSelection = false;
+        bool creationEnCours = false;
+
         LiquidCrystal lcd;    
 
-        GestionMenu(int moteur1, int moteur2, int moteur3, int vitesseMoteur1, int vitesseMoteur2, int vitesseMoteur3,
+        GestionMenu(int moteur1, int moteur2, int moteur3, float vitesseMoteur1, float vitesseMoteur2, float vitesseMoteur3,
                     int rs, int en, int d4, int d5, int d6, int d7,
                     int VRy, int VRx, int SW) :
                     lcd(rs,en,d4,d5,d6,d7)
@@ -78,19 +78,24 @@ class GestionMenu {
 
             if (switchValue == 1)
             {
-                output = enter; 
+                output = enter;
+                Serial.println("enter"); 
             } else if (yAxis >= 400)
             {
                 output = down;
+                Serial.println("down");
             } else if (yAxis <= -400)
             {
                 output = up;
-            } else if (xAxis >= 400)
+                Serial.println("up");
+            } else if (xAxis <= -400)
             {
                 output = right;
-            } else if (yAxis <= -400)
+                Serial.println("right");
+            } else if (xAxis >= 400)
             {
                 output = left;
+                Serial.println("left");
             }
             return output;
         }
@@ -126,6 +131,7 @@ class GestionMenu {
                     default:
                         break;
                 }
+                menuPreparation();
             }
         }
 
@@ -159,6 +165,7 @@ class GestionMenu {
                     default:
                         break;
                 }
+                menuPreparation();
             }
         }
 
@@ -203,20 +210,20 @@ class GestionMenu {
 
             if (moteurPreparationActuel == 0)
             {
-                lcd.print("    Moteur 1   ►");
+                lcd.print("    Moteur 1   >");
                 lcd.setCursor(0,1);
                 lcd.print("Quantite : ");
                 lcd.print(quantiteMoteur1);
                 lcd.print("cl");
 
             } else if (moteurPreparationActuel == 1){
-                lcd.print("◄   Moteur 2   ►");
+                lcd.print("<   Moteur 2   >");
                 lcd.setCursor(0,1);
                 lcd.print("Quantite : ");
                 lcd.print(quantiteMoteur2);
                 lcd.print("cl");
             } else if (moteurPreparationActuel == 2){
-                lcd.print("◄   Moteur 3    ");
+                lcd.print("<   Moteur 3   ");
                 lcd.setCursor(0,1);
                 lcd.print("Quantite : ");
                 lcd.print(quantiteMoteur3);
@@ -301,7 +308,8 @@ class GestionMenu {
                 lcd.print("Debut de la");
                 lcd.setCursor(0,1);
                 lcd.print("creation !");
-                FonctionCreationCocktail();
+                delay(2000);
+                menuPreparation();
             }
         }
 
@@ -325,9 +333,19 @@ class GestionMenu {
                 tempsMoteur2 = clToSeconds(2,quantiteMoteur2);
                 tempsMoteur3 = clToSeconds(3,quantiteMoteur3);
 
-                int tempsTries[3][2];
+                Serial.println("cl to s");
+                Serial.println(tempsMoteur1);
+                Serial.println(tempsMoteur2);
+                Serial.println(tempsMoteur3);
+
+                int** tempsTries;
                 triTemps(tempsMoteur1,tempsMoteur2,tempsMoteur3,
-                                            mn_moteur1, mn_moteur2, mn_moteur3, tempsTries);
+                        mn_moteur1, mn_moteur2, mn_moteur3, tempsTries);
+
+                Serial.println("tempsTries : ");
+                Serial.println(tempsTries[0][0]);
+                Serial.println(tempsTries[1][0]);
+                Serial.println(tempsTries[2][0]);
 
                 digitalWrite(mn_moteur1, LOW);
                 digitalWrite(mn_moteur2, LOW);
@@ -411,17 +429,6 @@ class GestionMenu {
             preparationEnCours = false;
         }
 
-        void FonctionCreationCocktail(){
-            lcd.clear();
-            lcd.setCursor(0,0);
-
-            lcd.print("Quantite maximum");
-            lcd.setCursor(0,1);
-            lcd.print("33 cl.");
-
-
-        }
-
         int clToSeconds(int moteur, int cl){
             switch (moteur)
             {
@@ -440,16 +447,25 @@ class GestionMenu {
         }
 
         void triTemps(int tempsMoteur1, int tempsMoteur2, int tempsMoteur3,
-                        int moteur1, int moteur2, int moteur3, int tab[3][2])
+                        int moteur1, int moteur2, int moteur3, int** tab)
         {
-            int tempsTries[3][2] = {{tempsMoteur1, moteur1}, {tempsMoteur2, moteur2}, {tempsMoteur3, moteur3}};
+            int tempsTries[3][2];
+            tempsTries[0][0] = tempsMoteur1;
+            tempsTries[0][1] = moteur1;
+
+            tempsTries[1][0] = tempsMoteur2;
+            tempsTries[1][1] = moteur2;
+
+            tempsTries[2][0] = tempsMoteur3;
+            tempsTries[2][1] = moteur3;
+
             int n = sizeof(tempsTries) / sizeof(tempsTries[0]);
 
             for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j < n; j++)
                 {
-                    if (tempsTries[i][0] > tempsTries[j][0])  
+                    if (tempsTries[i][0] < tempsTries[j][0])  
                     {
                         int temp[2] = {tempsTries[i][0], tempsTries[i][1]};
                         tempsTries[i][0] = tempsTries[j][0];
@@ -463,6 +479,11 @@ class GestionMenu {
                 }
             }
                         
-            tab = tempsTries;
+            for (int i = 0; i < n; i++)
+            {
+                tab[i][0] = tempsTries[i][0];
+                tab[i][1] = tempsTries[i][1];
+            }
+            
         }
 };

@@ -50,6 +50,7 @@ GestionMenu menu(moteur1, moteur2, moteur3,
 
 void setup() {
   // put your setup code here, to run once:
+  Serial.begin(9600);
   pinMode(moteur1, OUTPUT);
   digitalWrite(moteur1, HIGH);
 
@@ -86,28 +87,26 @@ void loop() {
                 menu.moveDown();
                 break;
             case right :
-                if (creationEnCours == true)
+                if (menu.creationEnCours == true)
                 {
                     menu.moveRight();
                 }
                 break;
             case left : 
-                if (creationEnCours == true){
+                if (menu.creationEnCours == true){
                     menu.moveLeft();
-                } else{
-                    break;
                 }
+                break;
             case enter :
-                if (premiereSelection == false) {
+                if (menu.premiereSelection == false) {
                     menu.pageConfirmation();
                 }
-                else if (premiereSelection == true) {
+                else if (menu.premiereSelection == true && menu.creationEnCours == false) {
                     menu.lancementMoteur();  
                 }
-                else if (premiereSelection == true){
+                else if (menu.premiereSelection == true && menu.creationEnCours == true) {
                     menu.lancementCreation();
-                }
-                
+                }               
                 break;
             default : break;
         }
