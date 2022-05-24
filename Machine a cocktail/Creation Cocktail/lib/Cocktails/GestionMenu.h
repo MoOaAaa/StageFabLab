@@ -338,7 +338,12 @@ class GestionMenu {
                 Serial.println(tempsMoteur2);
                 Serial.println(tempsMoteur3);
 
-                int** tempsTries;
+                int** tempsTries = new int*[3];
+                for (int i = 0; i < 3; i++)
+                {
+                    tempsTries[i] = new int[2];
+                }
+                
                 triTemps(tempsMoteur1,tempsMoteur2,tempsMoteur3,
                         mn_moteur1, mn_moteur2, mn_moteur3, tempsTries);
 
@@ -367,6 +372,9 @@ class GestionMenu {
                 lcd.print("Preparation !");
 
                 preparationEnCours = false;
+                creationEnCours = false;
+                delay(2000);
+                menuSelection();
             }
             
         }
@@ -386,6 +394,7 @@ class GestionMenu {
             lcd.print("Preparation !");
 
             preparationEnCours = false;
+            menuSelection();
         }
 
         void FonctionCocktailSansAlcool() {
@@ -405,6 +414,7 @@ class GestionMenu {
             lcd.print("Preparation !");
 
             preparationEnCours = false;
+            menuSelection();
         }
 
         void FonctionPurger() {
@@ -427,6 +437,8 @@ class GestionMenu {
             lcd.print("purge !");
 
             preparationEnCours = false;
+            delay(2000);
+            menuSelection();
         }
 
         int clToSeconds(int moteur, int cl){
@@ -444,6 +456,7 @@ class GestionMenu {
             default:
                 break;
             }
+            return 0;
         }
 
         void triTemps(int tempsMoteur1, int tempsMoteur2, int tempsMoteur3,
@@ -473,8 +486,6 @@ class GestionMenu {
 
                         tempsTries[j][0] = temp[0];
                         tempsTries[j][1] = temp[1];
-
-                        delete(temp);
                     }
                 }
             }
