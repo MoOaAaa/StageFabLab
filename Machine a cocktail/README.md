@@ -4,6 +4,9 @@
 - [2. Utilisation](#2-utilisation)
   - [2.1. Fonctionnalités](#21-fonctionnalités)
   - [2.2. Programme](#22-programme)
+- [3. Montage électrique](#3-montage-électrique)
+  - [Fonctionnement d'un relais](#fonctionnement-dun-relais)
+  - [Montage électrique](#montage-électrique)
 
 
 # 1. Matériaux
@@ -44,8 +47,33 @@ La partie technique du programme se trouve dans le header
 [GestionMenu.h](https://github.com/MoOaAaa/StageFabLab/blob/main/Machine%20a%20cocktail/Creation%20Cocktail/lib/Cocktails/GestionMenu.h),
 et est utilisé pour gérer l'entièreté de la machine. Les fonctions citées dans
 [2.1.](#21-fonctionnalités) se trouvent dans l'ordre aux lignes :
-- [382](https://github.com/MoOaAaa/StageFabLab/blob/main/Machine%20a%20cocktail/Creation%20Cocktail/lib/Cocktails/GestionMenu.h#L382)
-- [400](https://github.com/MoOaAaa/StageFabLab/blob/main/Machine%20a%20cocktail/Creation%20Cocktail/lib/Cocktails/GestionMenu.h#L400)
-- [420](https://github.com/MoOaAaa/StageFabLab/blob/main/Machine%20a%20cocktail/Creation%20Cocktail/lib/Cocktails/GestionMenu.h#L420)
-- [316](https://github.com/MoOaAaa/StageFabLab/blob/main/Machine%20a%20cocktail/Creation%20Cocktail/lib/Cocktails/GestionMenu.h#L316)
+- [382 - FonctionCocktailAlcool()](https://github.com/MoOaAaa/StageFabLab/blob/main/Machine%20a%20cocktail/Creation%20Cocktail/lib/Cocktails/GestionMenu.h#L382)
+- [400 - FonctionCocktailSansAlcool()](https://github.com/MoOaAaa/StageFabLab/blob/main/Machine%20a%20cocktail/Creation%20Cocktail/lib/Cocktails/GestionMenu.h#L400)
+- [420 - FonctionPurger()](https://github.com/MoOaAaa/StageFabLab/blob/main/Machine%20a%20cocktail/Creation%20Cocktail/lib/Cocktails/GestionMenu.h#L420)
+- [316 - lancementCreation()](https://github.com/MoOaAaa/StageFabLab/blob/main/Machine%20a%20cocktail/Creation%20Cocktail/lib/Cocktails/GestionMenu.h#L316)
 
+
+# 3. Montage électrique
+## Fonctionnement d'un relais
+Un relais permet de contrôler des appareils demandant un fort courant électrique via un plus faible
+courant électrique. Les relais sont comme des interrupteurs mais activés par de l'électricité.
+
+<img 
+  src="./images/FonctionnementRelais.gif" 
+  alt="Fonctionnement Relais" 
+  width="50%" 
+  height="50%"
+  />
+
+Dans notre cas, les relais nous permettent de contrôler des moteurs 24V DC grâce à un arduino qui ne
+délivre que du 5V DC.
+
+Les relais existent sous plusieurs formes, mais les relais que nous utilisons sont des relais à 5
+pins comme celui-ci :
+
+<img
+  src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F698761698436822395%2F&psig=AOvVaw1VYYVUlKXweIN75GDSFkWQ&ust=1654608344782000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCPjRjND2mPgCFQAAAAAdAAAAABAT"
+  alt="12V/5pin RElay pinout" 
+/>
+
+## Montage électrique
