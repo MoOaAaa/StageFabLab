@@ -5,8 +5,10 @@
   - [2.1. Fonctionnalités](#21-fonctionnalités)
   - [2.2. Programme](#22-programme)
 - [3. Montage électrique](#3-montage-électrique)
-  - [Fonctionnement d'un relais](#fonctionnement-dun-relais)
-  - [Montage électrique](#montage-électrique)
+  - [3.1. Fonctionnement d'un relais](#31-fonctionnement-dun-relais)
+  - [3.2. Montage électrique](#32-montage-électrique)
+- [4. Possibilités d'amélioration](#4-possibilités-damélioration)
+  - [4.1. Partie physique](#41-partie-physique)
 
 
 # 1. Matériaux
@@ -26,6 +28,9 @@ Voici la liste des matériaux que nous avons utilisé pour créer notre machine 
 - Un embout pour diminuer la taille de la sortie du tuyau
 - Trois planches de bois 60x40cm
 - Des vis en fonction
+
+
+Voici des photos de la machine : 
 
 
 # 2. Utilisation
@@ -54,7 +59,7 @@ et est utilisé pour gérer l'entièreté de la machine. Les fonctions citées d
 
 
 # 3. Montage électrique
-## Fonctionnement d'un relais
+## 3.1. Fonctionnement d'un relais
 Un relais permet de contrôler des appareils demandant un fort courant électrique via un plus faible
 courant électrique. Les relais sont comme des interrupteurs mais activés par de l'électricité.
 
@@ -76,4 +81,28 @@ pins comme celui-ci :
   alt="12V/5pin RElay pinout" 
 />
 
-## Montage électrique
+Les bornes NO et NC du relais veulent dire "Normally Open" et "Normally Closed". C'est grâce à ces
+deux bornes que l'on va pouvoir choisir l'état de l'appareil relié au relais lorsque ce dernier
+n'est pas activé. La résistance est reliée à notre contrôleur, dans notre cas les pins digitales de
+l'arduino ainsi que sa terre. La borne "Common pin" est reliée au positif de notre source d'énergie
+haute-tension.
+<br/>
+Voici un circuit avec un seul moteur et un relais contrôlé par un Arduino :
+![Circuit Relais](./images/CircuitRelais.PNG)
+
+## 3.2. Montage électrique
+Pour notre circuit complet nous devons rajouter un écran LCD ainsi qu'un joystick d'où l'utilité du
+[protoshield](https://www.adafruit.com/product/51) nous permettant d'obtenir beaucoup plus d'accès
+au courant que l'arduino délivre.<br/>
+Voici un exemple des branchements des trois moteurs ainsi que de l'écran LCD :
+
+<img 
+  src="./images/CircuitComplet.png"
+  alt="Circuit Complet"
+/>
+
+# 4. Possibilités d'amélioration
+## 4.1. Partie physique
+Le montage de notre machine s'est faite uniquement avec des matériaux de récupération,ce qui laisse
+beaucoup de possibilités d'amélioration techniques. Bien entendu la machine à quelques défauts car
+nous ne sommes "que" des informaticiens donc nous n'avons pas pensé à tout.
