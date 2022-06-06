@@ -72,7 +72,7 @@ Les relais existent sous plusieurs formes, mais les relais que nous utilisons so
 pins comme celui-ci :
 
 <img
-  src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F698761698436822395%2F&psig=AOvVaw1VYYVUlKXweIN75GDSFkWQ&ust=1654608344782000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCPjRjND2mPgCFQAAAAAdAAAAABAT"
+  src="./images/RelayPinout.jpg"
   alt="12V/5pin RElay pinout" 
 />
 
