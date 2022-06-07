@@ -83,6 +83,7 @@ le moteur et un déplacement vertical pour la quantité. <br/>
 Une pression sur le joystick permet de confirmer son choix.
 
 ## 2.2. Programme
+La version définitive du programme se trouve dans [version finale](https://github.com/MoOaAaa/StageFabLab/tree/main/Machine%20a%20cocktail/Version%20Finale).
 La partie technique du programme se trouve dans le header
 [GestionMenu.h](https://github.com/MoOaAaa/StageFabLab/blob/main/Machine%20a%20cocktail/Creation%20Cocktail/lib/Cocktails/GestionMenu.h),
 et est utilisé pour gérer l'entièreté de la machine. Les fonctions citées dans
