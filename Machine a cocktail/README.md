@@ -132,7 +132,7 @@ au courant que l'arduino délivre.<br/>
 Voici un exemple des branchements des trois moteurs ainsi que de l'écran LCD :
 
 <img 
-  src="./images/CircuitComplet.png"
+  src="./images/CircuitComplet.PNG"
   alt="Circuit Complet"
 />
 
