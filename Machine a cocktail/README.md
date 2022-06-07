@@ -9,6 +9,7 @@
   - [3.2. Montage électrique](#32-montage-électrique)
 - [4. Possibilités d'amélioration](#4-possibilités-damélioration)
   - [4.1. Partie physique](#41-partie-physique)
+  - [Partie programmation](#partie-programmation)
 
 
 # 1. Matériaux
@@ -140,3 +141,26 @@ Voici un exemple des branchements des trois moteurs ainsi que de l'écran LCD :
 Le montage de notre machine s'est faite uniquement avec des matériaux de récupération,ce qui laisse
 beaucoup de possibilités d'amélioration techniques. Bien entendu la machine à quelques défauts car
 nous ne sommes "que" des informaticiens donc nous n'avons pas pensé à tout.
+
+Voici donc une liste des améliorations liées au matériel que nous pourrions ajouter :
+
+* Un écran LCD plus grand **ou** un écran tactile
+* Un système anti-retour pour éviter que le liquide déborde du tube PVC lorsqu'il y a un trop gros débit
+* Des pompes plus performantes
+* Un autre support pour l'écran et le joystick
+* Un design peut-être plus efficace et permettant d'acceuillir de plus grands verres
+* Plus de pompes pour ne pas avoir à changer les bouteilles trop souvent
+* Un Arduino Leonardo ou Due
+* Capteurs pour voir si le verre est en place ou si des bouteilles sont présentes
+
+
+## Partie programmation
+Le programme que nous avons créé fonctionne bien mais peut être sujet à des améliorations.
+
+Voici les pistes possibles :
+
+* Meilleure gestion de la mémoire si on veut rajouter des cocktails
+* Possibilité de créer une pseudo base de données pour n'afficher que les cocktails disponibles avec
+  les bouteilles en place.
+* Gestion plus poussée de la quantité de boisson délivrée
+* Gestion des capteurs évoqués plus haut
