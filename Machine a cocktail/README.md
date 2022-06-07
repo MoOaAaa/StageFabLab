@@ -32,6 +32,40 @@ Voici la liste des matériaux que nous avons utilisé pour créer notre machine 
 
 Voici des photos de la machine : 
 
+Avant de la machine <br/>
+<img
+  src="./images/AvantMachine.jpg"
+  alt="Avant machine"
+  width="50%"
+  height="50%"
+/>
+
+
+Côté droit de la machine<br/>
+<img
+  src="./images/CoteDroitMachine.jpg"
+  alt="Côté droit machine"
+  width="50%"
+  height="50%"
+/>
+
+
+Côté gauche de la machine<br/>
+<img
+  src="./images/CoteGaucheMachine.jpg"
+  alt="Côté gauche  machine"
+  width="50%"
+  height="50%"
+/>
+
+Moteurs vus de face<br/>
+<img
+  src="./images/MoteursMachine.jpg"
+  alt="Moteurs machine"
+  width="50%"
+  height="50%"
+/>
+
 
 # 2. Utilisation
 ## 2.1. Fonctionnalités
