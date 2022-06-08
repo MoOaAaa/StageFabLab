@@ -2,7 +2,7 @@
 
 **Données sur les tâches réalisées durant mon stage de fin de DUT info.**
  
-- [1. Modèle 3D et gcode](#1-modèle-3d-et-gcode)
+- [1. Modèles 3D et gcode](#1-modèles-3d-et-gcode)
 - [2. Capteurs arduino](#2-capteurs-arduino)
 - [3. Arduino ESP32 modules](#3-arduino-esp32-modules)
 - [4. Panel de LED](#4-panel-de-led)
@@ -10,7 +10,7 @@
 - [6. Makey-Makey](#6-makey-makey)
 - [7. Robots](#7-robots)
 
-# 1. Modèle 3D et gcode
+# 1. Modèles 3D et gcode
 Dans ce dossier se trouve les différents modèles 3D (.stl) et les fichiers lisibles par l'imprimante 3D (gcode) que nous avons utiliser pendant le stage. Plus de détails dans [ce dossier](https://github.com/MoOaAaa/StageFabLab/tree/main/3D%20Models%20and%20gcodes).
 
 # 2. Capteurs arduino
