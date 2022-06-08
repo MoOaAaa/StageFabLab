@@ -9,7 +9,6 @@
 - [5. Machine à cocktails](#5-machine-à-cocktails)
 - [6. Makey-Makey](#6-makey-makey)
 - [7. Robots](#7-robots)
-- [8. Site internet](#8-site-internet)
 
 # 1. Modèle 3D et gcode
 Dans ce dossier se trouve les différents modèles 3D (.stl) et les fichiers lisibles par l'imprimante 3D (gcode) que nous avons utiliser pendant le stage. Plus de détails dans [ce dossier](https://github.com/MoOaAaa/StageFabLab/tree/main/3D%20Models%20and%20gcodes).
@@ -32,5 +31,3 @@ Avec les 2 autres stagiaires, nous avons créé un jeu de rythme avec les Makey-
 # 7. Robots
 Expérimentations de quelques robots, principalement à des fins de tests pour des ateliers. Plus de détails dans [ce dossier](https://github.com/MoOaAaa/StageFabLab/tree/main/Robots).
  
-# 8. Site internet
-Ici, j'ai continuer le site internet fait par les stagiaires de l'année dernière. Plus de détails dans [ce dossier](https://github.com/MoOaAaa/StageFabLab/tree/main/Website).
