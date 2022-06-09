@@ -1,8 +1,12 @@
 # Sommaire <!-- omit in toc -->
 
+- [1. Capteurs, écran LCD et Arduino](#1-capteurs-écran-lcd-et-arduino)
+- [2. Branchements](#2-branchements)
+- [3. Code et lancement du système](#3-code-et-lancement-du-système)
+- [4. Explication du code](#4-explication-du-code)
+- [5. Résultats](#5-résultats)
 
-
-# Capteurs, écran LCD et Arduino
+# 1. Capteurs, écran LCD et Arduino
 
 Ce document a pour but de résumé et expliquer les différentes étapes nécessaires pour utiliser un capteur d’humidité, de température, d’humidité des sols, un écran LCD et un arduino UNO.
 
@@ -25,10 +29,10 @@ Matériel nécessaire :
  
 -	Breadboard
 
-__**Prérequis**__ :
+<u>**Prérequis**</u> :
 Avoir téléchargé et installé l’IDE d’arduino.
 
-# Branchements 
+# 2. Branchements 
 L’écran LCD étant la partie la plus complexe de l‘installation et des branchements nous allons
 commencer par cela. Branchez les différents éléments comme l’image ci-dessous (la couleur des jumper
 wires n’a aucune importance mais il est conseillé de s’imposer un code couleur pour mieux se
@@ -39,12 +43,12 @@ pour le -) :
  
 Quand cela est fait nous pouvons passer au branchement des capteurs. Commençons par le capteur de température et d’humidité. Connecté la tige + du capteur à la bande + de votre bread board et la tige – à la bande – de votre bread board. Pour la tige restante connecté la au pin 8 de votre arduino. En ce qui concerne le capteur d’humidité des sols, réitéré le même type de branchement que l’autre capteur pour la borne + et – (si vous ne voyez pas de + ou de – sur le capteur connecté le câble rouge au + et le noir au -). Le dernier câble doit être connecté au pin A0 de votre arduino.
 
-# Code et lancement du système :
+# 3. Code et lancement du système 
 Connectez votre arduino à votre ordinateur grâce au câble USB vers USB type B. Avant de faire quoi que ce soit regarder si votre écran LCD s’allume, si ce n’est pas le cas vous vous êtes trompé dans les branchements notamment au niveau de l’alimentation de l’écran LCD. Ensuite téléchargez le code disponible à cette [adresse](https://drive.google.com/drive/folders/1XI4GdzArzSmXVJ9uGre2PRAiJkumBldT?usp=sharing) .
 
 Ensuite ouvrez-le dans l’IDE d’arduino. Enfin téléverser le fichier vers votre arduino. Si tous vos branchements sont corrects l’écran devrait vous afficher la température en °C et °F et l’humidité de l’air et des sols en % (Si rien ne s’affiche essayer de tourner le potentiomètre dans un sens et dans l’autre pour modifier le contraste de l’écran, si rien ne se passe vérifier les branchements). Notez que dans le code certaines valeurs doivent être changé si vous avez modifié les certains branchements (Les branchement que je propose fonctionne d’autres branchements pourraient être corrects théoriquement mais pourraient ne pas fonctionnés).
 
-# Explication du code
+# 4. Explication du code
 ```Arduino
 #define DHTPIN 8 // Digital pin connected to the DHT  sensor
 ```
@@ -78,7 +82,7 @@ float m = analogRead(A0);
  
 A0 représente le port auquel est brancher le câble de donnée de votre capteur de d’humidité des sols.
  
-# Résultats 
+# 5. Résultats 
 Les résultats qui sont affiché doivent ressembler à ceci :
 
 ![Resultats](./Images/Result.jpg)
